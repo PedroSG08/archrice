@@ -1,0 +1,2 @@
+zen-browser-bin
+otf-departure-mono-nerd
