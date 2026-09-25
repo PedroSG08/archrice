@@ -1,0 +1,26 @@
+INSTALACIÓN
+===========
+1. Extrae este directorio.
+2. Ejecuta como el usuario normal:
+       ./install.sh
+3. Si aparecen dependencias AUR, debe existir yay, paru o pikaur.
+4. Revisa la lista mostrada. El programa no actualiza todo Arch.
+
+El instalador:
+- instala solamente los paquetes ausentes;
+- respalda las carpetas hypr, kitty, rofi y los fondos gestionados;
+- elimina esas configuraciones anteriores y deja solo esta instalación;
+- copia Hyprland, Hyprpaper, Kitty, Rofi y los fondos;
+- adapta las rutas al usuario y XDG del equipo destino;
+- recarga Hyprland si ya hay una sesión activa;
+- no cambia la sesión de inicio ni modifica perfiles de otras aplicaciones.
+
+Usa «./install.sh --keep-config» si quieres conservar archivos adicionales
+dentro de esas carpetas. La copia de seguridad se conserva en ambos casos.
+
+RECOMENDACIONES
+===============
+- Revisa el hash del archivo .tar si te lo proporcionaron.
+- Usa «./install.sh --dry-run» para inspeccionar el plan.
+- Las copias de seguridad están en:
+  ~/.local/share/hyprland-transfer/backups/AAAAMMDD-HHMMSS
