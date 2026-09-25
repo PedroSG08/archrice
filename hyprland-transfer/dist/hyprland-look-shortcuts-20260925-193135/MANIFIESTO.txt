@@ -1,0 +1,32 @@
+Bundle de aspecto y atajos de Hyprland
+======================================
+Formato: 3
+Creado: 2026-09-25T19:31:35+02:00
+Origen: Arch Linux
+Hyprland de origen: 0.56.2
+Configuración: 14 paquetes oficiales y 2 paquetes AUR
+Fondos incluidos: 5
+Rotación de fondos: wallpaper-rotator.sh, intervalo 1200 segundos
+Fastfetch: incluida
+Monitor: eDP-1
+Hyprpaper: bloque wallpaper conservado con monitor = *
+Zen (aspecto, a mano): user.js y tema CSS (a5f6a231-e3c8-4ce8-8a8e-3e93efd6adec) copiados del perfil de origen
+Limpieza predeterminada: completa, después de crear una copia de seguridad
+
+El bloque wallpaper de hyprpaper se conserva con monitor = *, de modo que el
+fondo de arranque se aplica a todas las salidas del equipo destino. El rotador
+lo sustituye enseguida por una imagen al azar de la carpeta de fondos.
+
+El bloque hl.monitor sale con output = "": en el origen valía para
+eDP-1, y en el destino se aplica a todas las salidas. El nombre
+original queda en un comentario junto al bloque, por si en el equipo destino
+hay que volver a fijarlo.
+
+El rotador wallpaper-rotator.sh se inicia con Hyprland y va cambiando de fondo
+cada 1200 segundos. Las imágenes que aparecen en su lista SKIP no
+entran en la rotación porque se usan en otro sitio, en este caso como logo de
+fastfetch.
+
+payload/extra NO se instala: son ajustes de archivos personales del equipo
+destino (perfil de Zen y fragmento de .bashrc) y se aplican a mano con las
+instrucciones que trae cada carpeta.

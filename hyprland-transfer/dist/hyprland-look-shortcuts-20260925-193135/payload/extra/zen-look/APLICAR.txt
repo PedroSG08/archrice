@@ -1,0 +1,27 @@
+ASPECTO DE ZEN BROWSER
+======================
+Esto NO lo instala el programa. Son archivos de configuración, no de sesión:
+copia solo el user.js y el tema, nunca el resto del perfil.
+
+Desde el directorio del bundle, con el navegador cerrado:
+
+  ZEN="$HOME/.config/zen/<TU-PERFIL>"
+  cp -a payload/extra/zen-look/user.js "$ZEN/user.js"
+  cp -a payload/extra/zen-look/chrome/. "$ZEN/chrome/"
+  cp -a payload/extra/zen-look/zen-themes.json "$ZEN/zen-themes.json"
+
+El nombre del perfil se ve en ~/.config/zen: es la carpeta que contiene
+prefs.js (por ejemplo "3usbbg9k.Default (release)").
+
+Qué hace:
+- user.js: pone el fondo del navegador transparente y activa el barra lateral y
+  la barra de direcciones con acrylic. Es lo que hace que el desenfoque de
+  Hyprland se vea detrás de la ventana.
+- Lo mismo fuerza el modo oscuro del navegador.
+- chrome/: el tema CSS que limpia la barra de direcciones.
+
+Requisitos: en Hyprland hace falta decoration.blur con ignore_opacity = true,
+que es lo que trae ya hyprland.lua.
+
+El logo del fastfetch solo se ve dentro de kitty; el resto de ajustes de Zen no
+se transportan.

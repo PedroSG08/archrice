@@ -1,0 +1,19 @@
+Bundle de aspecto y atajos de Hyprland
+======================================
+Formato: 2
+Creado: 2026-09-25T18:27:41+02:00
+Origen: Arch Linux
+Hyprland de origen: 0.56.2
+Configuración: 13 paquetes oficiales y 2 paquetes AUR
+Fondos incluidos: 5
+Rotación de fondos: wallpaper-rotator.sh, intervalo 1200 segundos
+Fastfetch: incluida
+Limpieza predeterminada: completa, después de crear una copia de seguridad
+
+El bloque hyprpaper específico del monitor de origen se omite; la línea
+"wallpaper = ,RUTA" aplica el mismo fondo a todos los monitores de destino.
+
+El rotador wallpaper-rotator.sh se inicia con Hyprland y va cambiando de fondo
+cada 1200 segundos. Las imágenes que aparecen en su lista SKIP no
+entran en la rotación porque se usan en otro sitio, en este caso como logo de
+fastfetch.

@@ -1,0 +1,14 @@
+hyprland
+hyprpaper
+kitty
+rofi
+yazi
+fastfetch
+discord
+hyprshot
+hyprshutdown
+wireplumber
+brightnessctl
+playerctl
+xdg-desktop-portal-hyprland
+ttf-jetbrains-mono-nerd

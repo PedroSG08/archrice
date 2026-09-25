@@ -1,0 +1,56 @@
+INSTALACIÓN
+===========
+1. Extrae este directorio.
+2. Ejecuta como el usuario normal:
+       ./install.sh
+3. Si aparecen dependencias AUR, debe existir yay, paru o pikaur.
+4. Revisa la lista mostrada. El programa no actualiza todo Arch.
+
+El instalador:
+- instala solamente los paquetes ausentes;
+- respalda las carpetas hypr, kitty, rofi, fastfetch y los fondos gestionados;
+- elimina esas configuraciones anteriores y deja solo esta instalación;
+- copia Hyprland, Hyprpaper, Kitty, Rofi, Fastfetch y los fondos;
+- adapta las rutas al usuario y XDG del equipo destino;
+- deja el bloque hl.monitor y el bloque wallpaper de hyprpaper puestos para
+  todas las salidas, no solo para la del equipo de origen;
+- recarga Hyprland si ya hay una sesión activa;
+- no cambia la sesión de inicio ni modifica perfiles de otras aplicaciones.
+
+Usa «./install.sh --keep-config» si quieres conservar archivos adicionales
+dentro de esas carpetas. La copia de seguridad se conserva en ambos casos.
+
+FONDOS Y FASTFETCH
+==================
+- Los fondos van alternándose solos cada 20 minutos. Para
+  cambiar uno antes de tiempo: ~/.config/hypr/wallpaper-rotator.sh next
+- Para ver cuáles entran en la rotación: ~/.config/hypr/wallpaper-rotator.sh list
+- El intervalo se cambia en la variable INTERVAL de ese mismo script.
+- Una de las imágenes queda reservada como logo de fastfetch en lugar del de
+  Arch, y por eso el rotador la ignora. Esa imagen solo se ve en kitty.
+- El logo sale porque ~/.bashrc llama a fastfetch. El programa NO toca tu
+  .bashrc: la línea va en payload/extra/fastfetch/snippet.bash, para pegarla.
+
+MONITOR
+=======
+- hyprland.lua sale con output = "" en el bloque hl.monitor, que es la forma de
+  aplicarlo a todas las salidas del equipo destino. El nombre de la salida del
+  equipo de origen se queda escrito en un comentario justo encima.
+- Si en el destino hay varios monitores y quieres posiciones o escalas
+  distintas, edita ese bloque antes de arrancar Hyprland. En el equipo de
+  origen era: eDP-1
+
+ASPECTO DE ZEN (A MANO)
+=======================
+- El perfil del navegador no se toca nunca. Lo único que viaja es la
+  configuración de aspecto escrita a mano: payload/extra/zen-look.
+- Ahí está user.js (fondo transparente, acrylic y modo oscuro), que es lo que
+  deja ver el desenfoque de Hyprland detrás de la ventana, y el tema CSS.
+- Las instrucciones de copia están en payload/extra/zen-look/APLICAR.txt.
+
+RECOMENDACIONES
+===============
+- Revisa el hash del archivo .tar si te lo proporcionaron.
+- Usa «./install.sh --dry-run» para inspeccionar el plan.
+- Las copias de seguridad están en:
+  ~/.local/share/hyprland-transfer/backups/AAAAMMDD-HHMMSS

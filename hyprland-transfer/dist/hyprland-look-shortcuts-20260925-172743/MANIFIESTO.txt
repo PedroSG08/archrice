@@ -1,0 +1,12 @@
+Bundle de aspecto y atajos de Hyprland
+======================================
+Formato: 2
+Creado: 2026-09-25T17:27:43+02:00
+Origen: Arch Linux
+Hyprland de origen: 0.56.2
+Configuración: 13 paquetes oficiales y 2 paquetes AUR
+Fondos incluidos: 4
+Limpieza predeterminada: completa, después de crear una copia de seguridad
+
+El bloque hyprpaper específico del monitor de origen se omite; la línea
+"wallpaper = ,RUTA" aplica el mismo fondo a todos los monitores de destino.

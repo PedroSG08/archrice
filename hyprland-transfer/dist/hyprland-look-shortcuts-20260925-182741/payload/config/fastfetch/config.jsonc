@@ -1,0 +1,63 @@
+{
+  "$schema": "https://raw.githubusercontent.com/fastfetch-cli/fastfetch/dev/doc/json_schema.json",
+
+  // Sustituye el logo de Arch por la imagen personal ALLqk82.png.
+  //
+  // "kitty-direct" entrega el archivo al terminal con el protocolo de gráficos
+  // de kitty, que es el que lo escala al tamaño indicado en width/height.
+  // Solo se ve la imagen en kitty; en otra terminal el escape no se dibuja.
+  //
+  // Ojo: 28x16 son CELDAS, y las celdas de kitty no son cuadradas. Con
+  // font_size 12 y DepartureMono la celda mide 15x31 px (se comprueba con
+  // printf '\033[16t' dentro de kitty -> "ESC[6;31;15t"), o sea 0.484.
+  // Por eso 28x16 celdas son 420x496 px -> ratio 0.847, no 1.75.
+  //
+  // La original de 1920x1080 (1.777) metida en ese bloque salia estrechado.
+  // ALLqk82-cropped.png es el recorte central que deja 915x1080 = 0.847, la
+  // proporción exacta del bloque, así kitty escala uniforme y no deforma nada.
+  //
+  // Para rehacerlo (o si cambias width/height) hay que mirar primero la celda
+  // real y recortar a  (cols*celda_w) / (rows*celda_h):
+  //   ffmpeg -i ORIGEN.png -vf "crop=ANCHO:ALTO:X:Y" DESTINO.png
+  //   python3 -c "print(round(1080*420/496))"   -> ancho que toca
+  "logo": {
+    "type": "kitty-direct",
+    "source": "__WALLPAPER_DIR__/ALLqk82-cropped.png",
+    "width": 28,
+    "height": 16
+  },
+
+  // Un archivo de configuración sustituye al de fastfetch, no lo amplía, así
+  // que hay que repetir la lista de módulos. Es la de --print-structure.
+  "modules": [
+    "Title",
+    "Separator",
+    "OS",
+    "Host",
+    "Kernel",
+    "Uptime",
+    "Packages",
+    "Shell",
+    "Display",
+    "DE",
+    "WM",
+    "WMTheme",
+    "Theme",
+    "Icons",
+    "Font",
+    "Cursor",
+    "Terminal",
+    "TerminalFont",
+    "CPU",
+    "GPU",
+    "Memory",
+    "Swap",
+    "Disk",
+    "LocalIp",
+    "Battery",
+    "PowerAdapter",
+    "Locale",
+    "Break",
+    "Colors"
+  ]
+}
